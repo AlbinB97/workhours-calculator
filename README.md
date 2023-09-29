@@ -9,7 +9,7 @@ Simple python script to calculate worked hours in a day, because I'm too lazy to
 
 Simply run:
 ```
-python3 ./calc.py
+./calc.py
 ```
 Then answer prompted questions.
 

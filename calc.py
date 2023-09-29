@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import datetime
 
 default_workday = datetime.timedelta(hours=8)
