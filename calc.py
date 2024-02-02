@@ -72,7 +72,8 @@ total_internal_time_str = str(total_internal_time).split(":")[:2]
 formatted_total_internal_worktime = ":".join(total_internal_time_str)
 
 print(colorama.Fore.LIGHTBLACK_EX + ("-" * 50) + reset_color)
-print(f"Internal Time Worked: {formatted_total_internal_worktime}")
+if total_internal_time > datetime.timedelta(0):
+    print(f"Internal Time Worked: {formatted_total_internal_worktime}")
 
 for project in selected_projects:
     if project == project_one:
