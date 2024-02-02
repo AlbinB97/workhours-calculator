@@ -48,24 +48,19 @@ projects = [
 answers = inquirer.prompt(projects)
 selected_projects = answers['projects']
 
+total_internal_time = total_worktime
+
 for project in selected_projects:
     hours_worked_on_project = input(colorama.Fore.CYAN + "How many hours did you work on " + colorama.Fore.LIGHTBLUE_EX + f"{project}" + colorama.Fore.CYAN + " (H:M) > " + reset_color)
     answer_hours, answer_minutes = map(int, hours_worked_on_project.split(":"))
     if project == project_one:
         projone_time = datetime.timedelta(hours=answer_hours, minutes=answer_minutes)
-    elif project == project_two:
-        projtwo_time = datetime.timedelta(hours=answer_hours, minutes=answer_minutes)
-    elif project == project_three:
-        projthree_time = datetime.timedelta(hours=answer_hours, minutes=answer_minutes)
-
-total_internal_time = total_worktime
-
-for project in selected_projects:
-    if project == project_one:
         total_internal_time = total_internal_time - projone_time
     elif project == project_two:
+        projtwo_time = datetime.timedelta(hours=answer_hours, minutes=answer_minutes)
         total_internal_time = total_internal_time - projtwo_time
     elif project == project_three:
+        projthree_time = datetime.timedelta(hours=answer_hours, minutes=answer_minutes)
         total_internal_time = total_internal_time - projthree_time
 
 total_internal_time_str = str(total_internal_time).split(":")[:2]
