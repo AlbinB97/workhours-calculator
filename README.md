@@ -5,18 +5,25 @@ Simple python script to calculate worked hours in a day, because I'm too lazy to
 ![example](./img/example.png)
 
 ## How it works
-*Requires python and datetime module.*
+
+Install requirements:
+```
+pip install -r requirements.txt
+```
 
 Simply run:
 ```
 ./calc.py
 ```
-Then answer prompted questions.
 
-## If changes are necessary
-You can change default workday and default lunchtime in the script on line 3 & 4.
-```
-default_workday = datetime.timedelta(hours=8)
-default_lunch_time = datetime.timedelta(hours=1)
-```
-These are set by default to 8 hour workday with 1 hour lunch.
+*Use arrowkeys on keyboard to select projects and press enter to confirm.*
+
+## Changing/adjusting projects
+
+You can change the name of projects by setting the variables `project_one`, `project_two`, and `project_three` at the beginning of calc.py.
+
+**To add or remove projects you need to:**
+
+1. Create or remove a project variable at the beginning of calc.py
+2. Add or remove the variable from the inquirer choices list
+3. Adjust all "for loops" that loop through selected projects
